@@ -59,8 +59,9 @@
 	$login = $_GET['login'];
 	if(trim($login) == '')
 		$imgPng = imageCreateFromPng($fallBack_image);
-	else
-		$imgPng = imageCreateFromPng('http://s3.amazonaws.com/MinecraftSkins/'.$login.'.png');
+	else	
+		$imgPng = imageCreateFromPng($login);
+		//$imgPng = imageCreateFromPng('http://s3.amazonaws.com/MinecraftSkins/'.$login.'.png');
 	
 	if(!$imgPng)
         	$imgPng = imageCreateFromPng($fallBack_image);
